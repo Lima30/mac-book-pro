@@ -1,6 +1,6 @@
+//memory8GB
 function updateMemory8GB() {
     let memory8GB = 0;
-    console.log(memory8GB);
     const memoryAmount8GB = document.getElementById('memory-cost');
     memoryAmount8GB.innerText = memory8GB;
 }
@@ -9,31 +9,23 @@ document.getElementById('memory-small').addEventListener('click',
     function () {
         updateMemory8GB();
         calculateTotalPrice();
-        grandTotalPrice();
     })
 
-
-function updateMemory64GB() {
-    let memory64GB = 180;
-    console.log(memory64GB);
-    const memoryAmount64GB = document.getElementById('memory-cost');
-    memoryAmount64GB.innerText = memory64GB;
+//memory16GB
+function updateMemory16GB() {
+    let memory16GB = 180;
+    const memoryAmount16GB = document.getElementById('memory-cost');
+    memoryAmount16GB.innerText = memory16GB;
 }
-
 document.getElementById('memory-large').addEventListener('click',
     function () {
-        updateMemory64GB();
+        updateMemory16GB();
         calculateTotalPrice();
-        grandTotalPrice();
     })
 
-
-
 //storage256GB
-
 function updateStorage256GB() {
     let storage256GB = 0;
-    console.log(storage256GB);
     const storageAmount256GB = document.getElementById('storage-cost');
     storageAmount256GB.innerText = storage256GB;
 }
@@ -42,14 +34,12 @@ document.getElementById('storage-256GB').addEventListener('click',
     function () {
         updateStorage256GB();
         calculateTotalPrice();
-        grandTotalPrice();
     })
 
 //storage512GB
 
 function updateStorage512GB() {
     let storage512GB = 100;
-    console.log(storage512GB);
     const storageAmount512GB = document.getElementById('storage-cost');
     storageAmount512GB.innerText = storage512GB;
 }
@@ -58,14 +48,12 @@ document.getElementById('storage-512GB').addEventListener('click',
     function () {
         updateStorage512GB();
         calculateTotalPrice();
-        grandTotalPrice();
     })
 
 //storage1TB
 
 function updateStorage1TB() {
     let storage1TB = 180;
-    console.log(storage1TB);
     const storageAmount1TB = document.getElementById('storage-cost');
     storageAmount1TB.innerText = storage1TB;
 }
@@ -74,14 +62,11 @@ document.getElementById('storage-1TB').addEventListener('click',
     function () {
         updateStorage1TB();
         calculateTotalPrice();
-        grandTotalPrice();
     })
 
 //deliveryfree
-
 function updatedeliveryFree() {
     let deliveryfree = 0;
-    console.log(deliveryfree);
     const deliveryFree = document.getElementById('delivery-cost');
     deliveryFree.innerText = deliveryfree;
 }
@@ -90,14 +75,12 @@ document.getElementById('delivery-free').addEventListener('click',
     function () {
         updatedeliveryFree();
         calculateTotalPrice();
-        grandTotalPrice();
     })
 
 //deliveryfee
 
 function updatedeliveryFee() {
     let deliveryfee = 20;
-    console.log(deliveryfee);
     const deliveryFee = document.getElementById('delivery-cost');
     deliveryFee.innerText = deliveryfee;
 }
@@ -106,16 +89,9 @@ document.getElementById('delivery-fee').addEventListener('click',
     function () {
         updatedeliveryFee();
         calculateTotalPrice();
-        grandTotalPrice();
     })
 
-function getInputValue(product) {
-    const productInput = document.getElementById(product + '-number');
-    const productNumber = parseInt(productInput.value);
-    return productNumber;
-
-}
-//ucalculateTotalPrice();
+//calculateTotalPrice();
 function calculateTotalPrice() {
     const memory = document.getElementById('memory-cost');
     const memoryCost = parseInt(memory.innerText);
@@ -131,14 +107,10 @@ function calculateTotalPrice() {
     GrandTotalAmount();
 
 }
-
-// function GrandTotalAmount() {
-//     const grandTotal = document.getElementById('grand-price');
-//     const grandTotalCost = (grandTotal.value);
-//     console.log(grandTotalCost);
-// }
-
+//footer calculation
 function GrandTotalAmount() {
+
+
     const grandTotal = document.getElementById('total-price');
     const grandTotalCost = (grandTotal.innerText);
     const Total = grandTotalCost;
@@ -156,4 +128,7 @@ document.getElementById('promo-button').addEventListener('click', function () {
     if (input == 'stevekaku') {
         console.log('valid');
     }
+    else if (input != 'stevekaku')
+        console.log('invalid');
+
 })
